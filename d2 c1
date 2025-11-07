@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main() {
+    int length, breadth, perimeter, area ;
+    printf(" enter length: ");
+    scanf("%d", &length);
+    printf(" enter breadth: ");
+        scanf("%d", &breadth);
+
+perimeter = 2 * ( length + breadth );
+area = length * breadth;
+printf ("  perimeter of given rectangle  is %d \n", perimeter );
+printf (" area  of rectangle is %d \n", area );
+return 0;
+
+}

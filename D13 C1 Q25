@@ -1,0 +1,36 @@
+#include <stdio.h>
+int main () {
+    int a, b, output;
+    float outpu2;
+    char operation;
+    printf(" enter first number: ");
+    scanf(" %d", &a);
+     printf(" enter second number: ");
+    scanf(" %d", &b);
+    printf(" select operation to perform + - * / % :  ");
+    scanf(" %c", &operation );
+    switch (operation) { 
+        case '+' : 
+        output = a + b;
+        printf("sum of numbers %d and %d is %d", a, b, output);
+        break;
+         case '-' : 
+        output = a - b;
+        printf("diffrence of numbers %d and %d is %d", a, b, output);
+        break; 
+        case '*' : 
+        output = a * b;
+        printf("product of numbers %d and %d is %d", a, b, output);
+        break;
+        case '/' : 
+        outpu2 = (float) a / b;
+        printf("quotient of numbers %d and %d is %.2f", a, b, outpu2);
+        break;
+        case '%' : 
+        output = a % b;
+        printf("remainder when %d is divided by %d is %d", a, b, output);
+        break;
+        default : printf(" enter a valid operand ");
+        
+}
+return 0; }

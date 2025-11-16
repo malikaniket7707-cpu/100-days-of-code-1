@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() { 
+    int days, fine;
+
+    printf("enter number of days since due date of\n");
+    printf("return of book:\n");
+    scanf("%d", &days);
+
+    if (days <= 5) {
+        fine = days * 2;
+        printf("your fine for %d days is %d", days, fine);
+    }
+    else if (days <= 10) {
+        fine = (5 * 2) + (days - 5) * 4;
+        printf("your fine for %d days is %d", days, fine);
+    }
+    else if (days <= 30) {
+        fine = (5 * 2) + (5 * 4) + (days - 10) * 6;
+        printf("your fine for %d days is %d", days, fine);
+    }
+    else {
+        printf("your subscription is cancelled due to not returning book on time");
+    }
+
+    return 0;
+}

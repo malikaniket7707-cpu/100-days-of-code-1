@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main ()
+{ 
+    int units, amnt, x; 
+    printf( " enter the number of units consumed:  ");
+    scanf("%d", &units);
+   if ( units <= 100 ) {
+       amnt= 5 * units;
+       printf(" the amount billed is %d", amnt);
+        }
+   else if ( units <= 200 ) {
+       amnt= 500 + (units-100)*7;
+       printf(" the amount billed is %d", amnt);
+   }
+   else if ( units <= 300 ) {
+       amnt= 1200 + (units -200)*10 ;
+       printf(" the amount billed is %d", amnt);
+   }
+        else  {
+       amnt= 2200 + (units-300)*12;
+       printf(" the amount billed is %d", amnt);
+        }
+    return 0;
+}

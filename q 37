@@ -1,16 +1,18 @@
 #include <stdio.h>
 
 int main() {
-    int a, b, hcf = 1;
-    scanf("%d %d", &a, &b);
+    int a, b, lcm;
+    printf("Enter the first number: ");
+    scanf("%d", &a);
+    printf("Enter the second number: ");
+    scanf("%d", &b);
 
-    for (int i = 1; i <= a && i <= b; i++) {
-        if (a % i == 0 && b % i == 0)
-            hcf = i;
+    lcm = (a > b ? a : b);
+    while (1) {
+        if (lcm % a == 0 && lcm % b == 0) break;
+        lcm++;
     }
 
-    int lcm = (a * b) / hcf;
-    printf("LCM = %d\n", lcm);
-
+    printf("LCM = %d", lcm);
     return 0;
 }

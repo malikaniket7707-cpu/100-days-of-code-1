@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    char str[1000];
+    int i = 0;
+
+    printf("Enter a string: ");
+    scanf("%[^\n]", str);
+
+    while (str[i] != '\0') i++;
+
+    printf("Reversed string: ");
+    for (int j = i - 1; j >= 0; j--) {
+        printf("%c", str[j]);
+    }
+    printf("\n");
+
+    return 0;
+}

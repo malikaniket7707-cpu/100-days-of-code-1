@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+int main() {
+    int r, c;
+
+    printf("Enter number of rows: ");
+    scanf("%d", &r);
+
+    printf("Enter number of columns: ");
+    scanf("%d", &c);
+
+    int a[r][c];
+    int t[c][r];  // transpose matrix will have reversed dimensions
+
+    // Input matrix elements one by one
+    printf("\nEnter matrix elements:\n");
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            printf("Enter element at position [%d][%d]: ", i, j);
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    // Compute transpose
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            t[j][i] = a[i][j];
+        }
+    }
+
+    // Print original matrix
+    printf("\nOriginal Matrix:\n");
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            printf("%d ", a[i][j]);
+        }
+        printf("\n");
+    }
+
+    // Print transpose matrix
+    printf("\nTranspose Matrix:\n");
+    for (int i = 0; i < c; i++) {
+        for (int j = 0; j < r; j++) {
+            printf("%d ", t[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}

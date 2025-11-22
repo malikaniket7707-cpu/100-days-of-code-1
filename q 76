@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+
+    printf("Enter size of square matrix (n x n): ");
+    scanf("%d", &n);
+
+    int a[n][n];
+
+    // Input matrix elements
+    printf("\nEnter elements of the matrix:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("A[%d][%d]: ", i, j);
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    // Check for symmetry
+    int symmetric = 1; // assume it is symmetric
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (a[i][j] != a[j][i]) {
+                symmetric = 0;
+                break;
+            }
+        }
+        if (!symmetric) break;
+    }
+
+    // Result
+    if (symmetric)
+        printf("\nThe matrix IS symmetric.\n");
+    else
+        printf("\nThe matrix is NOT symmetric.\n");
+
+    return 0;
+}

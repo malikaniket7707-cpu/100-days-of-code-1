@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[1000];
+    printf("Enter full name: ");
+    scanf("%[^\n]", str);
+
+    int i = 0;
+    // Print initials of all words except the last
+    while (str[i] != '\0') {
+        if (i == 0 && str[i] != ' ')
+            printf("%c", str[i]);  // first initial
+        if (str[i] == ' ' && str[i + 1] != '\0') {
+            int j = i + 1;
+            // check if next word is the last word
+            int k = j;
+            int lastWordStart = j;
+            while (str[k] != '\0') {
+                if (str[k] == ' ')
+                    lastWordStart = k + 1;
+                k++;
+            }
+            if (j != lastWordStart)
+                printf("%c", str[j]);  // middle initials
+            else {
+                printf(" ");  // space before surname
+                break;
+            }
+        }
+        i++;
+    }
+
+    // Print surname in full
+    i++;
+    while (str[i] != '\0') {
+        printf("%c", str[i]);
+        i++;
+    }
+    printf("\n");
+
+    return 0;
+}

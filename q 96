@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    char s[1000];
+    int i = 0, start = 0;
+
+    printf("Enter a sentence: ");
+    scanf("%[^\n]", s);
+
+    while (1) {
+        if (s[i] == ' ' || s[i] == '\0') {
+            int left = start, right = i - 1;
+            while (left < right) {
+                char temp = s[left];
+                s[left] = s[right];
+                s[right] = temp;
+                left++;
+                right--;
+            }
+            if (s[i] == '\0') break;
+            start = i + 1;
+        }
+        i++;
+    }
+
+    printf("Reversed words: %s\n", s);
+
+    return 0;
+}

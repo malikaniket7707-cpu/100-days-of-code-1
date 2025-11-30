@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+enum Color {
+    SUCCESS,
+    FAILURE,
+    TIMEOUT
+};
+
+int main() {
+    const char *colorNames[] = {"SUCCESS", "FAILURE", "TIMEOUT"};
+    
+    for (int i = SUCCESS; i <= TIMEOUT; i++) {
+        printf("%s=%d\n", colorNames[i], i);
+    }
+
+    return 0;
+}

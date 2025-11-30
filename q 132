@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+// Define enumeration for traffic lights
+enum TrafficLight {
+    RED,
+    YELLOW,
+    GREEN
+};
+
+int main() {
+    
+    enum TrafficLight light;
+
+    for (light = RED; light <= GREEN; light++) {
+        if (light == RED) {
+            printf("RED: Stop\n");
+        } else if (light == YELLOW) {
+            printf("YELLOW: Wait\n");
+        } else if (light == GREEN) {
+            printf("GREEN: Go\n");
+        }
+    }
+
+    return 0;
+}

@@ -1,6 +1,6 @@
 #include <stdio.h>
+#include <string.h>
 
-// Define enumeration for traffic lights
 enum TrafficLight {
     RED,
     YELLOW,
@@ -8,17 +8,18 @@ enum TrafficLight {
 };
 
 int main() {
-    
-    enum TrafficLight light;
+    char input[10];
+    printf("Enter traffic light (RED, YELLOW, GREEN): ");
+    scanf("%s", input);
 
-    for (light = RED; light <= GREEN; light++) {
-        if (light == RED) {
-            printf("RED: Stop\n");
-        } else if (light == YELLOW) {
-            printf("YELLOW: Wait\n");
-        } else if (light == GREEN) {
-            printf("GREEN: Go\n");
-        }
+    if (strcmp(input, "RED") == 0) {
+        printf("Stop\n");
+    } else if (strcmp(input, "YELLOW") == 0) {
+        printf("Wait\n");
+    } else if (strcmp(input, "GREEN") == 0) {
+        printf("Go\n");
+    } else {
+        printf("Invalid input\n");
     }
 
     return 0;

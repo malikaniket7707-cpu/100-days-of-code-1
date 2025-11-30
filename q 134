@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+
+enum Status {
+    SUCCESS,
+    FAILURE,
+    TIMEOUT
+};
+
+int main() {
+    char input[10];
+    printf("Enter status (SUCCESS, FAILURE, TIMEOUT): ");
+    scanf("%s", input);
+
+    if (strcmp(input, "SUCCESS") == 0) {
+        printf("Operation completed successfully.\n");
+    } else if (strcmp(input, "FAILURE") == 0) {
+        printf("Operation failed.\n");
+    } else if (strcmp(input, "TIMEOUT") == 0) {
+        printf("Operation timed out.\n");
+    } else {
+        printf("Invalid input\n");
+    }
+
+    return 0;
+}

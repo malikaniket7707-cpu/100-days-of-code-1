@@ -6,6 +6,49 @@ enum TrafficLight {
     YELLOW,
     GREEN
 };
+#include <stdio.h>
+#include <string.h>
+
+enum Month {
+    JANUARY,
+    FEBRUARY,
+    MARCH,
+    APRIL,
+    MAY,
+    JUNE,
+    JULY,
+    AUGUST,
+    SEPTEMBER,
+    OCTOBER,
+    NOVEMBER,
+    DECEMBER
+};
+
+int main() {
+    char input[20];
+    int daysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    const char *monthNames[] = {
+        "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE",
+        "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"
+    };
+
+    printf("Enter month (e.g., JANUARY, FEBRUARY): ");
+    scanf("%s", input);
+
+    int found = 0;
+    for (int m = JANUARY; m <= DECEMBER; m++) {
+        if (strcmp(input, monthNames[m]) == 0) {
+            printf("%s has %d days\n", monthNames[m], daysInMonth[m]);
+            found = 1;
+            break;
+        }
+    }
+    if (!found) {
+        printf("Invalid month\n");
+    }
+
+    return 0;
+}
 
 int main() {
     char input[10];

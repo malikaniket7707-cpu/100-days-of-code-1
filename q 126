@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char fn[100];
+    printf("Enter source filename: ");
+    fgets(fn, sizeof(fn), stdin);
+    fn[strcspn(fn,"\n")] = '\0';
+    FILE *fp = fopen(fn, "r");
+    if (fp == NULL) {
+        printf("File does not exist!!");
+        return 1;
+    }
+    printf("File opened successfully.\n");
+    char s[100];
+    while (fgets(s, sizeof(s), fp) != NULL) {
+        printf("%s", s);
+    }
+
+    fclose(fp);
+    return 0;
+}

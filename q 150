@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+struct Student {
+    char name[50];
+    int roll;
+    int marks;
+};
+
+int main() {
+    struct Student s;        // normal structure variable
+    struct Student *ptr;     // pointer to structure
+
+    ptr = &s;                // ptr now points to s
+
+    printf("Enter name: ");
+    scanf("%s", ptr->name);  // same as s.name
+
+    printf("Enter roll: ");
+    scanf("%d", &ptr->roll); // same as s.roll
+
+    printf("Enter marks: ");
+    scanf("%d", &ptr->marks);
+
+    printf("\n--- Student Details ---\n");
+    printf("Name: %s\n", ptr->name);
+    printf("Roll: %d\n", ptr->roll);
+    printf("Marks: %d\n", ptr->marks);
+
+    return 0;
+}

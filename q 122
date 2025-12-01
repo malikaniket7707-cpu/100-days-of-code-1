@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+    FILE *fp = fopen("info.txt", "r");
+    if (fp == NULL) {
+        printf("No info!!");
+        return 0;
+    }
+    char c[100];
+    while (fgets(c, sizeof(c), fp) != NULL) {
+        printf("%s", c);
+    }
+    fclose(fp);
+    return 0;
+}

@@ -1,0 +1,22 @@
+#include <ctype.h>
+#include <stdio.h>
+
+int main() {
+    FILE *fp = fopen("input.txt", "r");
+    FILE *fp2 = fopen("output.txt", "w");
+
+    if (fp == NULL || fp2 == NULL) {
+        printf("Error running the program!!");
+        return 1;
+    }
+
+    int c;
+    while ((c=fgetc(fp)) != EOF) {
+        fputc(toupper(c), fp2);
+    }
+
+    fclose(fp);
+    fclose(fp2);
+    return 0;
+
+}

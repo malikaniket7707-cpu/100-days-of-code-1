@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Student {
+    char name[21];
+    int roll;
+    int marks;
+};
+
+void compareStu(struct Student s, struct Student t) {
+    printf("Name: %s | Roll: %d | Marks: %d\n", s.name, s.roll, s.marks);
+    printf("Name: %s | Roll: %d | Marks: %d\n", t.name, t.roll, t.marks);
+
+    if (strcmp(s.name, t.name) == 0 &&
+        s.roll == t.roll &&
+        s.marks == t.marks) 
+    {
+        printf("They are the same:\n");
+        printf("Name: %s | Roll: %d | Marks: %d", s.name, s.roll, s.marks);
+    } 
+    else {
+        printf("They are not equal!!");
+    }
+}
+
+int main() {
+    struct Student s, t;
+
+    printf("Enter your name: ");
+    scanf("%20s", s.name);   // no & needed
+
+    printf("Enter your roll number: ");
+    scanf("%d", &s.roll);
+
+    printf("Enter your marks: ");
+    scanf("%d", &s.marks);
+
+    printf("Enter name of student 2: ");
+    scanf("%20s", t.name);
+
+    printf("Enter roll number of student 2: ");
+    scanf("%d", &t.roll);
+
+    printf("Enter marks of student 2: ");
+    scanf("%d", &t.marks);
+
+    compareStu(s, t);
+
+    return 0;
+}

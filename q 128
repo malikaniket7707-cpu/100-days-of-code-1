@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    FILE *fp = fopen("data.txt", "r");
+
+    if (fp == NULL) {
+        printf("Can't open this file!!");
+        return 1;
+    }
+
+    int c, vowels = 0 , consonants = 0;
+    while ((c=fgetc(fp)) != EOF) {
+        if (c >= 'a' && c <= 'z') {
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                vowels++;
+            } else {
+                consonants++;
+            }
+        }
+    }
+
+    printf("Vowels: %d", vowels);
+    printf("Consonants: %d", consonants);
+    fclose(fp);
+    return 0;
+}

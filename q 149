@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Student {
+    char name[50];
+    int roll;
+    int marks;
+};
+
+int main() {
+    struct Student *s = malloc(sizeof(struct Student));
+    if (s == NULL) {
+        printf("Error assigning memory to the structure!!");
+        return 1;
+    }
+
+    printf("Enter student name: ");
+    scanf("%49s", s->name);   // prevents overflow
+
+    printf("Enter student roll: ");
+    scanf("%d", &s->roll);
+
+    printf("Enter student marks: ");
+    scanf("%d", &s->marks);
+
+    printf("\nName: %s | Roll: %d | Marks: %d", s->name, s->roll, s->marks);
+
+    free(s);
+    return 0;
+}

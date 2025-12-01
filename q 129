@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+  FILE *fp = fopen("numbers.txt", "r");
+
+  if (fp == NULL) {
+    printf("Cant read file!!");
+    return 1;
+  }
+
+  int d, sum=0, n = 0;
+  while (fscanf(fp, "%d", &d) != EOF) {
+    printf("%d ", d);
+    n++;
+    sum += d;
+  }
+
+  printf("\n");
+
+  const float average = (float)sum/n;
+
+  printf("Sum: %d\n", sum);
+  printf("Average: %.2f\n", average);
+  fclose(fp);
+  return 0;
+}
